@@ -5,6 +5,7 @@
 > 不是哲学口号,而是能直接贴进团队仓库的 checklist。
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](./LICENSE)
+[![Version](https://img.shields.io/badge/version-v1.0-brightgreen.svg)](./CHANGELOG.md)
 
 ---
 
@@ -27,10 +28,29 @@
 
 | 文件 | 用途 |
 |------|------|
-| **[SPEC.md](./SPEC.md)** | 完整规范(开发 / 设计 / 试金石 / Review / 度量 / 落地路线) |
+| **[SPEC.md](./SPEC.md)** | 完整规范(10 部分,见下) |
 | **[CONTRIBUTING.md](./CONTRIBUTING.md)** | 可直接贴进你项目的开发&贡献规范,也是为本仓库贡献的指南 |
 | **[.github/pull_request_template.md](./.github/pull_request_template.md)** | PR 自查模板,从规范派生 |
+| **[CHANGELOG.md](./CHANGELOG.md)** | 规范演进记录(v0.1 → v1.0,每条改动的来源) |
 | **[LICENSE](./LICENSE)** | CC BY 4.0 |
+
+### 规范十部分一览([SPEC.md](./SPEC.md))
+
+| # | 部分 | 核心 |
+|---|------|------|
+| ✳️ | 元原则·上下文优先 | 规则是默认值不是教条;规范本身是可迭代制品 |
+| 1 | 代码开发(为学习优化) | 迭代/反馈/实验/TDD · 工作区近零 · 测试必须有门禁 |
+| 2 | 代码设计(为管理复杂度) | 模块化/内聚/分离/抽象/管理耦合 · 责任爆炸半径 |
+| 3 | 两块试金石 | 可测试性 + 可部署性(迁移契约/CD gate/依赖可复现/密钥不入源码/12-factor) |
+| 4 | Code Review 规范 | 作者自查 + Reviewer 清单 + 对事不对人文化 |
+| 5 | 健康度量 | DORA 四指标 + SLO 与错误预算(SRE) |
+| 6 | 落地路线 | 三阶段渐进,别一步到位 |
+| 7 | 架构治理即代码 | fitness functions / SSOT 扫描器 / 风险路由 review |
+| 8 | 棕地 / 遗留系统适配 | 最小安全网,绝不重写 |
+| 9 | 跨服务与共享数据 | 共享 DB=隐式契约 / expand-contract / 契约测试 |
+| 10 | 安全基线 | OWASP ASVS 分级 + must-fix |
+
+> **怎么造出来的**:用真实项目当反例库(脱敏)+ 业界标杆当正例(具名)反复证伪迭代——途中规范甚至**纠正过自己上一版的规则**。锚定标杆:Farley · ArchUnit · Pact · strong_migrations · OpenTelemetry · OpenFeature · Testcontainers · trunk-based · Cockburn · Google SRE · OWASP ASVS · 12-factor。
 
 ---
 

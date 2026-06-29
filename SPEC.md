@@ -1,9 +1,29 @@
-# 代码开发与 Review 规范
+# 代码开发与 Review 规范 · v1.0
 
 > 基于 David Farley《Modern Software Engineering》(2021) 的工程理论落地。
 > 核心信念:软件工程 = 把**科学方法**用于复杂、不确定的系统。
 > 两大支柱:**为学习优化(Optimize for Learning)** + **为管理复杂度优化(Optimize for Managing Complexity)**。
 > 两块试金石:**可测试性(Testability)** 与 **可部署性(Deployability)** —— 难测、难部署,几乎等于设计有问题。
+>
+> 本规范由真实项目反例库(脱敏)+ 业界标杆(具名)反复证伪迭代而来,演进记录见 [CHANGELOG](./CHANGELOG.md)。
+
+## 目录
+
+- [元原则:上下文优先](#元原则上下文优先context-first)
+- [0. 总原则](#0-总原则贴在团队最前面)
+- [第一部分:代码开发(为学习优化)](#第一部分代码开发规范optimize-for-learning)
+- [第二部分:代码设计(为管理复杂度优化)](#第二部分代码设计规范optimize-for-managing-complexity)
+- [第三部分:两块试金石(可测试性 / 可部署性)](#第三部分两块试金石definition-of-done-必查)
+- [第四部分:Code Review 规范](#第四部分code-review-规范)
+- [第五部分:健康度量(DORA + SLO 错误预算)](#第五部分健康度量团队层面参考-dora)
+- [第六部分:落地路线(分阶段)](#第六部分落地路线规范是目标态需分阶段投资)
+- [第七部分:架构治理即代码(Fitness Functions)](#第七部分架构治理即代码fitness-functions)
+- [第八部分:棕地 / 遗留系统适配](#第八部分棕地--遗留系统适配brownfieldlegacy)
+- [第九部分:跨服务与共享数据](#第九部分跨服务与共享数据多服务--多语言--分仓)
+- [第十部分:安全基线](#第十部分安全基线security-baseline)
+- [一句话速记](#附一句话速记)
+
+> 锚定的业界标杆:Farley《Modern Software Engineering》· ArchUnit · Pact · strong_migrations · OpenTelemetry · OpenFeature · Testcontainers · trunk-based development · Cockburn(ports & adapters)· Google SRE · OWASP ASVS · 12-factor。
 
 ---
 
