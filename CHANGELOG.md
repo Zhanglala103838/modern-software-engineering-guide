@@ -3,6 +3,16 @@
 本规范是**活制品**——用真实代码库当反例库持续证伪、迭代。
 以下记录均为脱敏后的泛化结论,不含任何具体项目/业务信息。
 
+## v1.1 — 2026-06-29 · Claude Code 集成
+
+让规范"可被 AI 每次自动使用",而不只是躺在仓库里:
+
+- 新增 `claude/` 可分发资产:
+  - **skill `engineering-standards`**(SKILL.md 路由 + SPEC.md + CONTRIBUTING/PR 模板),写/审代码时自动加载、按段位路由。
+  - **斜杠命令** `/mse:check`、`/mse:review`、`/mse:init`、`/mse:onboard`、`/mse:fix`。
+  - **`claude/install.sh`** 一键装进 `~/.claude/`(可重复运行)。
+- README 加「在 Claude Code 里用」安装 + 命令说明 + 可选的全局 CLAUDE.md 指针;其他 AI 工具直接用 SPEC.md/CONTRIBUTING.md。
+
 ## v1.0 — 2026-06-29 · 定版
 
 首个定版。10 个部分覆盖从棕地地板到治理天花板的完整光谱,每条规则都有**真实项目证据(脱敏)或业界标杆背书(具名)**,且演进途中做过一次**自我纠错**(v0.3 推翻 v0.2 的行数阈值)。

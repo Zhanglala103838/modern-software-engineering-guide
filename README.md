@@ -64,6 +64,43 @@
 
 ---
 
+## 在 Claude Code 里用(skill + `/mse` 命令)
+
+本仓库自带一套 [Claude Code](https://claude.com/claude-code) 集成,装上后让 AI **每次写/审代码都按规范工作**,并给你一组斜杠命令。
+
+```bash
+git clone https://github.com/Zhanglala103838/modern-software-engineering-guide.git
+cd modern-software-engineering-guide
+bash claude/install.sh        # 装进 ~/.claude/(可重复运行)
+```
+
+装好后得到:
+
+**① skill `engineering-standards`** —— 写/改/审代码时自动加载规范(spectrum-routed:先定段位再套规则)。
+
+**② 斜杠命令(显式调用):**
+
+| 命令 | 作用 |
+|------|------|
+| `/mse:check` | 给当前项目**定段位** + 风险下降/投入最高的 top3 行动(只读) |
+| `/mse:review` | 按规范 review 当前改动或指定 PR(试金石 + Reviewer 清单) |
+| `/mse:init` | 新项目按**绿地目标态**起步(CI + 测试 + 锁依赖 + 密钥进 env) |
+| `/mse:onboard` | 把 CONTRIBUTING + PR 模板 + 段位标注落进当前 repo |
+| `/mse:fix` | 挑一条最高 ROI 改进并落地(棕地优先收未提交/加 CI…) |
+
+**③(可选)让每个 session 都自动想起规范** —— 在全局 `~/.claude/CLAUDE.md`(或 `~/CLAUDE.md`)加一段指针:
+
+```markdown
+### 工程规范基线(开发 + Review · 强制)
+写/改/审代码、开 PR、重构、起新项目前,先调 skill `engineering-standards`。
+先定段位再套规则(git status + CI/测试/最大文件):🧱棕地→第八部分最小安全网;✅绿地→第一/二/三部分。
+新项目按绿地目标态起步;老项目绝不重写,按"风险下降/投入"排序。元原则:上下文优先,规则是默认值不是教条。
+```
+
+> 其他 AI 编码工具(Cursor / Copilot / Codex 等):直接把 [`SPEC.md`](./SPEC.md) 或 [`CONTRIBUTING.md`](./CONTRIBUTING.md) 放进项目根目录 / 规则文件即可,命令是 Claude Code 专属。
+
+---
+
 ## 规范成长光谱(用它给项目体检)
 
 本规范不是空想,而是用真实项目反复证伪、迭代出来的。它覆盖一条从**棕地地板**到**绿地天花板**的完整光谱——给任何项目体检时,先定位它在光谱的哪一段,再用对应章节,而不是一上来就要求满分:
